@@ -1,0 +1,21 @@
+.elements {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  margin-top: 50px;
+  min-height: 58.125vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 48.52% 48.52%;
+  column-gap: 17px;
+  row-gap: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .elements {
+      width: 88.125%;
+      margin-top: 36px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 15.6825%);
+  }
+}
