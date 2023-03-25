@@ -3,17 +3,17 @@
   padding: 0;
   border: 0;
   position: absolute;
-  top: calc(50vh - 205px);
-  left: calc(50vw + 223px);
+  top: -40px;
+  right: -40px;
   width: 32px;
   height: 32px;
   background-color: transparent;
-  background-image: url(../../../images/Close-Icon.png);
+  background-image: url(../../../images/Close-Icon.svg);
   background-size: cover;
 }
 
 .popup__close-button:hover {
-  opacity: 0.8;
+  opacity: 0.25;
   cursor: pointer;
 }
 
@@ -21,7 +21,7 @@
   .popup__close-button {
       width: 20px;
       height: 20px;
-      top: calc(50vh - 197px);
-      left: calc(50vw + 121px);
+      top: -36px;
+      right: 0;
   }
 }

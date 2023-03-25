@@ -1,7 +1,6 @@
 .profile__profile-name {
   margin: 0;
   width: 294px;
-  display: inline-block;
   color: #FFFFFF;
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -16,7 +15,8 @@
 @media screen and (max-width: 767px) {
   .profile__profile-name {
       margin-top: 26px;
-      width: 100%;
+      margin-left: 46px;
+      width: 189px;
       font-size: 27px;
       line-height: 33px;
       text-align: center;

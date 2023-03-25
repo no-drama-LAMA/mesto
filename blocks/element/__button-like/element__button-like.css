@@ -1,0 +1,14 @@
+.element__button-like {
+  width: 22px;
+  height: 19px;
+  border: 0;
+  padding: 0;
+  background-image: url(../../../images/logo/empty-heart.svg);
+  background-size: cover;
+  background-color: transparent;
+}
+
+.element__button-like:hover {
+  opacity: 75%;
+  cursor: pointer;
+}

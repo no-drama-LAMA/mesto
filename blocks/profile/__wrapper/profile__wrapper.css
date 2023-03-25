@@ -1,0 +1,15 @@
+.profile__wrapper {
+  margin: 0;
+  display: flex;
+  justify-content: start;
+  align-items: baseline;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__wrapper {
+    width: 88.125%;
+    margin: 0 auto;
+  }
+}
+
+

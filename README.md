@@ -1,5 +1,7 @@
 # Проект: Место
 
+* [Ссылка на проект в GitHub Pages](https://no-drama-lama.github.io/mesto/)
+
 ### Обзор
 
 * Figma

@@ -3,10 +3,9 @@
   max-width: 880px;
   margin: 0 auto;
   margin-top: 50px;
-  min-height: 58.125vw;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 48.52% 48.52%;
+  grid-template-rows: repeat(2, 48.653%); /*48.011% 48.011%*/
   column-gap: 17px;
   row-gap: 20px;
 }

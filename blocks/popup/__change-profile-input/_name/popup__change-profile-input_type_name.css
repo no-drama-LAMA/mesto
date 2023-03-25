@@ -1,0 +1,9 @@
+.popup__change-profile-input_type_name {
+  margin-top: 54px;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__change-profile-input_type_name {
+      margin-top: 75px;
+  }
+}

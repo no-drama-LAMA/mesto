@@ -2,17 +2,15 @@
   width: 24px;
   height: 24px;
   margin-left: 18px;
-  transform: translateY(-6px);
   padding: 0;
   background-color: transparent;
   border: 0;
   background-image: url(../../../images/logo/Edit-Button.svg);
-  background-size: cover;
-  display: inline;
+  background-size: 24px 24px;
 }
 
 .profile__edit-button:hover {
-  opacity: 75%;
+  opacity: 0.6;
   cursor: pointer;
 }
 
@@ -21,5 +19,6 @@
       width: 18px;
       height: 18px;
       margin-left: 10px;
+      background-size: 18px 18px;
   }
 }
