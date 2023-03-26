@@ -1,11 +1,12 @@
 .element__text {
   width: 87.234%;
-  height: 23px;
   margin: 0 auto;
-  margin-top: 8.866%;
-  padding-bottom: 10.995%;
+  margin-top: 25px;
+  padding-bottom: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   overflow-y: visible;
+  box-sizing: border-box;
+  border: 0;
 }

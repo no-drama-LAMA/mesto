@@ -1,5 +1,6 @@
-.popup__change-profile-input {
+.popup__input {
   margin: 0;
+  margin-bottom: 30px;
   padding: 0;
   box-sizing: border-box;
   border: 0;
@@ -7,11 +8,14 @@
   width: 358px;
   height: 27px;
   font-family: inherit;
+}
 
+.popup__input:last-of-type {
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 600px) {
-  .popup__change-profile-input {
+  .popup__input {
       width: 238px;
   }
 }
