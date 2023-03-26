@@ -1,23 +1,23 @@
-/* inter-regular - latin */
+/* inter-regular */
 @font-face {
-  src: url(./fonts/inter-v12-latin-regular.woff2) format('woff2'),
-  url(./fonts/inter-v12-latin-regular.woff) format('woff');
+  src: url(./fonts/Inter-Regular.woff2) format('woff2'),
+  url(./fonts/Inter-Regular.woff) format('woff');
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
 }
-/* inter-500 - latin */
+/* inter-500 */
 @font-face {
-  src: url(./fonts/inter-v12-latin-500.woff2) format('woff2'),
-  url(./fonts/inter-v12-latin-500.woff) format('woff');
+  src: url(./fonts/Inter-Medium.woff2) format('woff2'),
+  url(./fonts/Inter-Medium.woff) format('woff');
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
 }
-/* inter-900 - latin */
+/* inter-900 */
 @font-face {
-  src: url(./fonts/inter-v12-latin-900.woff2) format('woff2'),
-  url(./fonts/inter-v12-latin-900.woff) format('woff');
+  src: url(./fonts/Inter-Black.woff2) format('woff2'),
+  url(./fonts/Inter-Black.woff) format('woff');
   font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
