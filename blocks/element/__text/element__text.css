@@ -10,3 +10,9 @@
   box-sizing: border-box;
   border: 0;
 }
+
+@media screen and (max-width: 766) {
+  .element__text {
+    margin: auto;
+  }
+}
