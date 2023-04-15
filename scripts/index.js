@@ -8,15 +8,15 @@ const popupCloseButtonElement = popupChangeProfile.querySelector('.popup__close-
 const popupChangeProfileOpenButton = document.querySelector('.profile__edit-button');
 
 // Форма попапа редактирования профиля
-let formChangeProfileElement = popupChangeProfile.querySelector('.popup__form');
+const formChangeProfileElement = popupChangeProfile.querySelector('.popup__form');
 
 // Поля формы попапа редактирования профиля
-let nameInput = formChangeProfileElement.querySelector('.popup__input_type_name'); // Воспользуйтесь инструментом .querySelector()
-let jobInput = formChangeProfileElement.querySelector('.popup__input_type_about');
+const nameInput = formChangeProfileElement.querySelector('.popup__input_type_name'); // Воспользуйтесь инструментом .querySelector()
+const jobInput = formChangeProfileElement.querySelector('.popup__input_type_about');
 
 // Элементы профиля, куда должны быть вставлены значения полей
-let profileName = document.querySelector('.profile__profile-name');
-let profileAbout = document.querySelector('.profile__profile-about');
+const profileName = document.querySelector('.profile__profile-name');
+const profileAbout = document.querySelector('.profile__profile-about');
 
 
 // ДОБАВЛЕНИЕ КАРТОЧКИ
@@ -29,11 +29,11 @@ const popupAddElementCloseButton = popupAddElement.querySelector('.popup__close-
 const popupAddElementOpenButton = document.querySelector('.profile__add-button');
 
 // Форма попапа добавления карточки
-let formAddElement = popupAddElement.querySelector('.popup__form');
+const formAddElement = popupAddElement.querySelector('.popup__form');
 
 // Поля формы попапа добавления карточки
-let formAddElementName = formAddElement.querySelector('.popup__input_type_name');
-let formAddElementImg = formAddElement.querySelector('.popup__input_type_about');
+const formAddElementName = formAddElement.querySelector('.popup__input_type_name');
+const formAddElementImg = formAddElement.querySelector('.popup__input_type_about');
 
 // РАСКРЫТИЕ КАРТИНКИ
 
