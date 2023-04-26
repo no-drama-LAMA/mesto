@@ -1,6 +1,7 @@
 .popup__form {
   margin: 0;
   padding: 34px 36px 37px;
+  position: relative;
   box-sizing: border-box;
   width: 430px;
   background-color: #FFFFFF;

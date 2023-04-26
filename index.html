@@ -50,10 +50,12 @@
     <section class="popup popup_profile">
       <div class="popup__container">
         <button class="popup__close-button" type="button"  aria-label="Закрыть форму"></button>
-        <form class="popup__form" name="change-profile-form">
+        <form class="popup__form" name="change-profile-form" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" class="popup__input popup__input_type_name" name="change-profile-name" value="Жак-Ив Кусто">
-          <input type="text" class="popup__input popup__input_type_about" name="change-profile-about" value="Исследователь океана">
+          <input type="text" class="popup__input popup__input_type_name" id="change-profile-name" required name="change-profile-name" value="Жак-Ив Кусто" minlength="2" maxlength="40">
+          <span class="popup__error-text" id="change-profile-name-error"></span>
+          <input type="text" class="popup__input popup__input_type_about" id="change-profile-about" required name="change-profile-about" value="Исследователь океана" minlength="2" maxlength="200">
+          <span class="popup__error-text" id="change-profile-about-error"></span>
           <button class="popup__submit-button" type="submit">Сохранить</button>
         </form>
       </div>
@@ -62,10 +64,12 @@
     <section class="popup popup_add-element">
       <div class="popup__container">
         <button class="popup__close-button" type="button"  aria-label="Закрыть форму"></button>
-        <form class="popup__form" name="add-element-form">
+        <form class="popup__form" name="add-element-form" novalidate>
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" class="popup__input popup__input_type_name" name="add-element-name">
-          <input type="text" class="popup__input popup__input_type_about" name="add-element-img">
+          <input type="text" class="popup__input popup__input_type_name" id="new-element-name" required name="add-element-name" minlength="2" maxlength="30">
+          <span class="popup__error-text" id="new-element-name-error"></span>
+          <input type="url" class="popup__input popup__input_type_about" id="new-element-img" required name="add-element-img">
+          <span class="popup__error-text" id="new-element-img-error"></span>
           <button class="popup__submit-button" type="submit">Создать</button>
         </form>
       </div>
@@ -80,6 +84,7 @@
     </section>
   </div>
   <script src="./scripts/constants.js"></script>
+  <script src="./scripts/validate.js"></script>
   <script src="./scripts/index.js"></script>
 </body>
 </html>

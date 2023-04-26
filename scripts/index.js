@@ -1,3 +1,6 @@
+// Все попапы
+const popups = document.querySelectorAll('.popup')
+
 // РЕДАКТИРОВАНИЕ ПРОФИЛЯ
 
 // Попап редактирования профиля
@@ -6,6 +9,10 @@ const popupChangeProfile = document.querySelector('.popup_profile');
 const popupCloseButtonElement = popupChangeProfile.querySelector('.popup__close-button');
 // Кнопка открытия попапа редактирования профиля
 const popupChangeProfileOpenButton = document.querySelector('.profile__edit-button');
+// Кнопка "Сохранить"
+const popupChangeProfileSubmitButton = popupChangeProfile.querySelector('.popup__submit-button');
+// Инпуты попапа редактирования профиля
+const popupChangeProfileInputs = popupChangeProfile.querySelectorAll('.popup__input');
 
 // Форма попапа редактирования профиля
 const formChangeProfileElement = popupChangeProfile.querySelector('.popup__form');
@@ -27,6 +34,10 @@ const popupAddElement = document.querySelector('.popup_add-element');
 const popupAddElementCloseButton = popupAddElement.querySelector('.popup__close-button');
 // Кнопка открытия попапа добавления карточки
 const popupAddElementOpenButton = document.querySelector('.profile__add-button');
+// Кнопка "Создать"
+const popupAddElementSubmitButton = popupAddElement.querySelector('.popup__submit-button');
+// Инпуты попапа добавления карточки
+const popupAddElementInputs = popupAddElement.querySelectorAll('.popup__input');
 
 // Форма попапа добавления карточки
 const formAddElement = popupAddElement.querySelector('.popup__form');
@@ -54,15 +65,36 @@ const elementTemplate = document.querySelector('.template-element').content;
 // Секция для добавления элементов
 const elements = document.querySelector('.elements');
 
+
 // Функция открытия попапа
 const openPopup = function (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByPressEsc);
 };
 
 // Функция закрытия попапа
 const closePopup = function (popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByPressEsc);
 };
+
+// Функция закрытия попапа нажатием кнопки
+const closeByPressEsc = function (evt) {
+  if (evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+  };
+}
+
+// Функция закрытия попапа кликом на оверлей
+const closeByPressLMB = function (evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.currentTarget);
+  };
+}
+
+popups.forEach(function(element) {
+  element.addEventListener('click', closeByPressLMB)
+})
 
 // ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ
 
@@ -71,6 +103,8 @@ popupChangeProfileOpenButton.addEventListener('click', function () {
   openPopup(popupChangeProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileAbout.textContent;
+  formOpeningBehavior(formChangeProfileElement);
+  toggleButtonState(popupChangeProfileInputs, popupChangeProfileSubmitButton, objectForValidation.inactiveButtonClass)
 });
 
 // Закрыть попап редактирования профиля
@@ -141,6 +175,8 @@ popupAddElementOpenButton.addEventListener('click', function () {
   formAddElementName.value = 'Название';
   formAddElementImg.value = 'Ссылка на картинку';
   openPopup(popupAddElement);
+  formOpeningBehavior(formAddElement);
+  toggleButtonState(popupAddElementInputs, popupAddElementSubmitButton, objectForValidation.inactiveButtonClass);
 });
 
 // Закрыть попап добавления карточки
@@ -193,7 +229,4 @@ popupAddElementOpenButton.addEventListener('click', function () {
 popupAddElementCloseButton.addEventListener('click', function () {
   closePopup(popupAddElement);
 });
-
-
-// Функция открытия папопа раскрытия картинки
 
