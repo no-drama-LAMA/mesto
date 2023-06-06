@@ -13,13 +13,15 @@ class Section {
   // публичный метод, который отвечает за отрисовку всех элементов
   addElement() {
     this._initialCards.forEach((element) => {
-      this.addItem(element);
+      this._renderer(element);
+      // this.addItem(element);
     });
   }
 
   // публичный метод addItem, который принимает DOM-элемент и добавляет его в контейнер.
   addItem(element) {
-    this._container.prepend(this._renderer(element));
+    // this._container.prepend(this._renderer(element));
+    this._container.prepend(element);
   }
 
 }

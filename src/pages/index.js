@@ -25,13 +25,18 @@ const userInfo = new UserInfo(profileInfoSet);
 const popupOpenedImage = new PopupWithImage(popupOpenedImageClass);
 popupOpenedImage.setEventListeners();
 
+// Экземпляр класса Card и генерация разметки
+function createCard(element) {
+  const newAddedElement = new Card(element, templateClass, popupOpenedImage.open);
+  const newElement = newAddedElement.createElement();
+  return newElement;
+}
+
 // Отрисовка элементов на странице
 const section = new Section({
   items: initialCards,
   renderer: (element) => {
-    const newAddedElement = new Card(element, templateClass, popupOpenedImage.open);
-    const newElement = newAddedElement.createElement();
-    return newElement;
+    section.addItem(createCard(element))
   }
 }, elements);
 
@@ -39,9 +44,10 @@ section.addElement();
 
 // ПОПАП РЕДАКТИРОВАНИЯ ПРОФИЛЯ
 
-const newPopupChangeProfile = new PopupWithForm(popupProfileClass, (evt) => {
+const newPopupChangeProfile = new PopupWithForm(popupProfileClass, (data) => {
   // evt.preventDefault();
-  userInfo.setUserInfo(newPopupChangeProfile._getInputValues());
+  // userInfo.setUserInfo(newPopupChangeProfile._getInputValues());
+  userInfo.setUserInfo(data);
   newPopupChangeProfile.setInputValues(userInfo.getUserInfo())
   newPopupChangeProfile.close();
 });
