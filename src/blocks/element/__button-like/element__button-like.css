@@ -6,6 +6,7 @@
   background-image: url(../../../images/logo/empty-heart.svg);
   background-size: cover;
   background-color: transparent;
+  display: block;
 }
 
 .element__button-like:hover {

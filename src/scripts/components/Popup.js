@@ -5,7 +5,8 @@ class Popup {
     this._popup = document.querySelector(selector);
     // Крестик закрытия попапа
     this._closeButton = this._popup.querySelector('.popup__close-button');
-
+    // Форма попапа
+    this._form = this._popup.querySelector('.popup__form');
   }
 
   // Содержит приватный метод _handleEscClose, который содержит логику закрытия попапа клавишей Esc.

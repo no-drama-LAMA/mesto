@@ -6,6 +6,8 @@ class UserInfo {
     this._profileName = document.querySelector(profileInfoSet.profileName);
     // и элемента информации о себе
     this._profileAbout = document.querySelector(profileInfoSet.profileAbout);
+    // аватар
+    this._profileAvatar = document.querySelector(profileInfoSet.profileAvatar);
   }
 
   // публичный метод, который возвращает объект с данными пользователя
@@ -14,9 +16,10 @@ class UserInfo {
   }
 
   // публичный метод, который принимает новые данные пользователя и добавляет их на страницу
-  setUserInfo(infoSet) {
-    this._profileName.textContent = infoSet.title;
-    this._profileAbout.textContent = infoSet.about;
+  setUserInfo({ title, about, avatar }) {
+    this._profileName.textContent = title;
+    this._profileAbout.textContent = about;
+    this._profileAvatar.src = avatar;
   }
 }
 

@@ -28,11 +28,7 @@ const initialCards = [
 
 // РЕДАКТИРОВАНИЕ ПРОФИЛЯ
 
-// Попап редактирования профиля
-// const popupChangeProfile = document.querySelector('.popup_profile');
-
 // Форма попапа редактирования профиля
-// const formChangeProfileElement = popupChangeProfile.querySelector('.popup__form');
 const formChangeProfileElement = document.querySelector('#change-profile-form');
 
 // Кнопка открытия попапа редактирования профиля
@@ -40,15 +36,29 @@ const popupChangeProfileOpenButton = document.querySelector('.profile__edit-butt
 
 // ДОБАВЛЕНИЕ КАРТОЧКИ
 
-// Попап добавления карточки
-// const popupAddElement = document.querySelector('.popup_add-element');
-
 // Форма попапа добавления карточки
-// const formAddElement = popupAddElement.querySelector('.popup__form');
 const formAddElement = document.querySelector('#add-element-form');
 
 // Кнопка открытия попапа добавления карточки
 const popupAddElementOpenButton = document.querySelector('.profile__add-button');
+
+// УДАЛЕНИЕ КАРТОЧКИ
+
+// Форма попапа удаления карточки
+const formDeleteElement = document.querySelector('#delete-element-form');
+
+// Кнопка открытия попапа удаления карточки
+const popupDeleteElementOpenButton = document.querySelector('.element__trash');
+
+// ОБНОВЛЕНИЕ АВАТАРА
+
+// Форма попапа обновления аватара
+const formChangeAvatar = document.querySelector('#change-avatar-form');
+
+// Кнопка открытия попапа обновления аватара
+const popupChangeAvatarOpenButton = document.querySelector('.profile__change-avatar-btn');
+
+
 
 // Класс шаблона элемента
 const templateClass = '.template-element';
@@ -65,10 +75,17 @@ const popupProfileClass = '.popup_profile';
 // Класс попапа добавления карточки
 const popupAddElementClass = '.popup_add-element';
 
+// Класс попапа обновления аватара
+const popupChangeAvatarClass = '.popup_change-avatar';
+
+// Класс попапа удаления карточки
+const popupDeleteElementClass = '.popup_delete-element';
+
 // Объект с селекторами двух элементов: элемента имени пользователя и элемента информации о себе
 const profileInfoSet = {
   profileName: '.profile__profile-name',
-  profileAbout: '.profile__profile-about'
+  profileAbout: '.profile__profile-about',
+  profileAvatar: '.profile__avatar'
 }
 
 // все нужные для валидации функциям классы и селекторы элементов
@@ -83,5 +100,7 @@ const objectForValidation = {
   errorClass: 'popup__error_visible'
 }
 
-export { initialCards, formChangeProfileElement, popupChangeProfileOpenButton, formAddElement, popupAddElementOpenButton, templateClass,
-  popupOpenedImageClass, elements, popupProfileClass, popupAddElementClass, profileInfoSet, objectForValidation };
+export { initialCards, formChangeProfileElement, popupChangeProfileOpenButton, formAddElement, popupAddElementOpenButton,
+  formDeleteElement, popupDeleteElementOpenButton, formChangeAvatar, popupChangeAvatarOpenButton, templateClass,
+  popupOpenedImageClass, elements, popupProfileClass, popupAddElementClass, popupChangeAvatarClass, popupDeleteElementClass, profileInfoSet,
+  objectForValidation };

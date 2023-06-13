@@ -12,6 +12,10 @@
   white-space: nowrap;
 }
 
+#delete-element-form .popup__title {
+  margin-bottom: 13px;
+}
+
 @media screen and (max-width: 600px) {
   .popup__title {
     width: 238px;
