@@ -5,6 +5,11 @@ class Api {
     this._authorization = options.headers.authorization;
   }
 
+  // Проверку статуса ответа сервера
+  _checkStatus(res) {
+    return res.ok ? res.json() : Promise.reject
+  }
+
   // Загрузка карточек с сервера
   getInitialCards() {
     return fetch(`${this._url}/cards`, {
@@ -12,7 +17,7 @@ class Api {
         authorization: this._authorization
       }
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 
   // Загрузка информации о пользователе с сервера
@@ -22,7 +27,7 @@ class Api {
         authorization: this._authorization
       }
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 
   // Редактирование профиля
@@ -35,7 +40,7 @@ class Api {
         about: data.about,
       })
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 
   // Обновление аватара пользователя
@@ -47,7 +52,7 @@ class Api {
         avatar: data.avatar,
       })
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 
   // Добавление новой карточки
@@ -60,7 +65,7 @@ class Api {
         link: data.link,
       })
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 
   // Постановка и снятие лайка
@@ -71,7 +76,7 @@ class Api {
         authorization: this._authorization
       }
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 
   deleteLikeCard(cardId) {
@@ -81,7 +86,7 @@ class Api {
         authorization: this._authorization
       }
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 
   // Удаление карточки
@@ -92,7 +97,7 @@ class Api {
         authorization: this._authorization
       }
     })
-    .then((res) => {return res.ok ? res.json() : Promise.reject})
+    .then(this._checkStatus)
   }
 }
 

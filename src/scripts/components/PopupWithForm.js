@@ -10,6 +10,7 @@ class PopupWithForm extends Popup {
     this._form = this._popup.querySelector('.popup__form');
     this._inputs = this._form.querySelectorAll('.popup__input');
     this._submitButton = this._form.querySelector('.popup__submit-button');
+    this._buttonText = this._submitButton.textContent;
   }
 
   // метод, который собирает данные всех полей формы
@@ -33,9 +34,19 @@ class PopupWithForm extends Popup {
     super.setEventListeners();
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      this._submitButton.textContent = "Сохранение...";
+      this.renderLoading();
       this._formSubmitCallback(this._getInputValues());
     })
+  }
+
+  // сменa текста в кнопке сабмита
+  renderLoading() {
+    this._submitButton.textContent = "Сохранение...";
+  }
+
+  // вернуть текст кнопки сабмита
+  resetLoading() {
+    this._submitButton.textContent = this._buttonText;
   }
 
   // не только добавлять обработчик клика иконке закрытия, но и добавлять обработчик сабмита формы.

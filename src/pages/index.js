@@ -17,9 +17,9 @@ import PopupDelete from '../scripts/components/PopupDelete.js';
 // Импорт класса Api
 import Api from '../scripts/components/Api.js';
 // Импорт всех констант
-import { initialCards, formChangeProfileElement, popupChangeProfileOpenButton, formAddElement, popupAddElementOpenButton,
-  formDeleteElement, popupDeleteElementOpenButton, formChangeAvatar, popupChangeAvatarOpenButton, templateClass,
-  popupOpenedImageClass, elements, popupProfileClass, popupAddElementClass, popupChangeAvatarClass, popupDeleteElementClass, profileInfoSet, objectForValidation } from '../scripts/utils/constants.js';
+import { formChangeProfileElement, popupChangeProfileOpenButton, formAddElement, popupAddElementOpenButton,
+  formChangeAvatar, popupChangeAvatarOpenButton, templateClass, popupOpenedImageClass, elements, popupProfileClass, popupAddElementClass,
+  popupChangeAvatarClass, popupDeleteElementClass, profileInfoSet, objectForValidation } from '../scripts/utils/constants.js';
 
 // Экземпляр класса Api
 const api = new Api({
@@ -49,6 +49,7 @@ const popupDeleteCard = new PopupDelete(popupDeleteElementClass, ({element, card
       popupDeleteCard.close();
     })
     .catch(((error) => console.error(`Ошибка удаления карточки ${error}`)))
+    .finally(() => popupDeleteCard.resetLoading())
 });
 // Слушатель клика закрытия попапа удаления карточки
 popupDeleteCard.setEventListeners();
@@ -88,6 +89,7 @@ const newPopupChangeProfile = new PopupWithForm(popupProfileClass, (data) => {
       newPopupChangeProfile.close();
     })
     .catch(((error) => console.error(`Ошибка изменения профиля ${error}`)))
+    .finally(() => newPopupChangeProfile.resetLoading())
 });
 // Слушатель клика закрытия попапа редактирования профиля
 newPopupChangeProfile.setEventListeners();
@@ -110,6 +112,7 @@ const newPopupAddElement = new PopupWithForm(popupAddElementClass, (data) => {
       newPopupAddElement.close();
     })
     .catch(((error) => console.error(`Ошибка добавления карточки ${error}`)))
+    .finally(() => newPopupAddElement.resetLoading())
 });
 // Слушатель клика закрытия попапа добавления карточки
 newPopupAddElement.setEventListeners();
@@ -130,6 +133,7 @@ const newPopupChangeAvatar = new PopupWithForm(popupChangeAvatarClass, (data) =>
       newPopupChangeAvatar.close();
     })
     .catch(((error) => console.error(`Ошибка обновления аватара ${error}`)))
+    .finally(() => newPopupChangeAvatar.resetLoading())
 });
 
 // Слушатель клика закрытия попапа обновления аватара
@@ -161,6 +165,6 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([userData, cardSet]) => {
     cardSet.forEach((element) => element.masterId = userData._id);
     userInfo.setUserInfo({ title: userData.name, about: userData.about, avatar: userData.avatar });
-    section.addElement(cardSet);
+    section.renderItems(cardSet);
   })
   .catch((error) => console.error(`Ошибка создания страницы ${error}`))

@@ -9,7 +9,7 @@ class Section {
   }
 
   // публичный метод, который отвечает за отрисовку всех элементов
-  addElement(data) {
+  renderItems(data) {
     data.forEach((element) => {
       this._renderer(element);
     });

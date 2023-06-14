@@ -1,31 +1,3 @@
-// Массив
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 // РЕДАКТИРОВАНИЕ ПРОФИЛЯ
 
 // Форма попапа редактирования профиля
@@ -41,14 +13,6 @@ const formAddElement = document.querySelector('#add-element-form');
 
 // Кнопка открытия попапа добавления карточки
 const popupAddElementOpenButton = document.querySelector('.profile__add-button');
-
-// УДАЛЕНИЕ КАРТОЧКИ
-
-// Форма попапа удаления карточки
-const formDeleteElement = document.querySelector('#delete-element-form');
-
-// Кнопка открытия попапа удаления карточки
-const popupDeleteElementOpenButton = document.querySelector('.element__trash');
 
 // ОБНОВЛЕНИЕ АВАТАРА
 
@@ -100,7 +64,6 @@ const objectForValidation = {
   errorClass: 'popup__error_visible'
 }
 
-export { initialCards, formChangeProfileElement, popupChangeProfileOpenButton, formAddElement, popupAddElementOpenButton,
-  formDeleteElement, popupDeleteElementOpenButton, formChangeAvatar, popupChangeAvatarOpenButton, templateClass,
-  popupOpenedImageClass, elements, popupProfileClass, popupAddElementClass, popupChangeAvatarClass, popupDeleteElementClass, profileInfoSet,
-  objectForValidation };
+export { formChangeProfileElement, popupChangeProfileOpenButton, formAddElement, popupAddElementOpenButton,
+  formChangeAvatar, popupChangeAvatarOpenButton, templateClass, popupOpenedImageClass, elements, popupProfileClass,
+  popupAddElementClass, popupChangeAvatarClass, popupDeleteElementClass, profileInfoSet, objectForValidation };
